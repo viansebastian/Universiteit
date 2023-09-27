@@ -1,9 +1,10 @@
-package ugm.sem3;
+package ugm.sem3.assignmentAAKsortRuntime;
 
 import java.text.DecimalFormat;
+import java.util.Random;
 
-public class assignmentAAK2 {
-     public static void bubble_sort(int arr[], int n){
+public class assignmentAAK{
+    public static void bubble_sort(int arr[], int n){
         for (int j = 0; j < n-1; j++){
             for (int i = 0; i < n-1-j; i++){
                 if(arr[i] > arr[i+1]){
@@ -35,21 +36,18 @@ public class assignmentAAK2 {
         }
     }
 
-    public static void descendingArr(int arr[], int n){
-        for (int i = 0; i < n; i++){
-            arr[i] = n - i; 
-        }
-    }
-
     public static void main(String[] args) {
+        Random rand = new Random();
 
-        int nValues[] = {10000, 100000, 800000}; 
+        int nValues[] = {10000, 100000, 700000}; 
 
         for (int i = 0; i < nValues.length; i++) {
             int nTimes = nValues[i]; 
             int arr[] = new int[nTimes]; 
 
-            descendingArr(arr, nTimes);
+            for (int j = 0; j < nTimes; j++) {
+                arr[j] = rand.nextInt(11);
+            }
 
             DecimalFormat format = new DecimalFormat("0.0000");
 
@@ -57,13 +55,14 @@ public class assignmentAAK2 {
             bubble_sort(arr, nTimes);
             long bubbleEnd = System.nanoTime();
             double bubbleElapsed = (bubbleEnd - bubbleStart) / 1e6;
-            System.out.println("bubble sort time: " + format.format(bubbleElapsed) + " seconds");
+            System.out.println("bubble sort time: " + format.format(bubbleElapsed) + " ms");
+
 
             long selectionStart = System.nanoTime();
             selection_sort(arr, nTimes);
             long selectionEnd = System.nanoTime();
             double selectionElapsed = (selectionEnd - selectionStart) / 1e6;
-            System.out.println("selection sort time: " + format.format(selectionElapsed) + " seconds");
+            System.out.println("selection sort time: " + format.format(selectionElapsed) + " ms");
 
             System.out.println();
         }
