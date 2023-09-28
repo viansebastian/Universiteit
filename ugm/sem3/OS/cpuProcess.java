@@ -40,7 +40,7 @@ public class cpuProcess {
         System.out.println(totalTime);
 
         int avgWaitTime = (totalTime - processes[processNum-1].burstTime)/processNum;
-         
+        
         System.out.println("Average Wait Time: " + avgWaitTime + " ms");
     }
 }
