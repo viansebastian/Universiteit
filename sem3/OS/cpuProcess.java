@@ -1,4 +1,4 @@
-package ugm.sem3.OS;
+package sem3.OS;
 
 import java.util.Scanner;
 

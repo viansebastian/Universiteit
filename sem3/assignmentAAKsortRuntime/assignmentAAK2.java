@@ -1,4 +1,4 @@
-package ugm.sem3.assignmentAAKsortRuntime;
+package sem3.assignmentAAKsortRuntime;
 
 import java.text.DecimalFormat;
 
